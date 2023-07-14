@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="semaforo.css">
+</head>
+<body>
+
+    <div id="trafficsignal">
+        <div id="red"></div>
+        <div id="yellow"></div>
+        <div id="green"></div>
+    </div>
+
+    <script>
+        function start() {
+            var green=document.getElementById("green");
+            var red=document.getElementById("red");
+            var yellow=document.getElementById("yellow");
+            
+            yellow.style.opacity=1;
+            setTimeout(function () {
+                green.style.opacity=.3;
+                red.style.opacity=1;
+                yellow.style.opacity=.3;
+            },5000);
+
+            setTimeout(function () {
+                green.style.opacity=1;
+                red.style.opacity=.3;
+                yellow.style.opacity=.3;
+            },7000);
+
+            setTimeout(function () {
+                green.style.opacity=.3;
+                red.style.opacity=.3;
+                yellow.style.opacity=1;
+            },12000);
+}
+var timer=setInterval(function () {
+    start();
+},12000);
+ 
+start();
+    </script>
+
+</body>
+</html>
